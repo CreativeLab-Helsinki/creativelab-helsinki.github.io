@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreativeLab Helsinki - Creative Writing, Film Making & Cinema Talks</title>
-    <meta name="description" content="CreativeLab Helsinki offers comprehensive creative education courses including Creative Writing, Film Making, and Cinema Talks for ages 15-21. Join our year-long program starting September 2025.">
+    <meta name="description" content="CreativeLab Helsinki offers comprehensive creative education courses including Creative Writing, Film Making, and Cinema Talks for ages 15-21. Join our year-long program starting 30th August 2025.">
     <style>
         * {
             margin: 0;
@@ -501,7 +501,71 @@
                 font-size: 2rem;
             }
         }
+
+                /* Цвета для лекций */
+        .schedule-item.upcoming {
+            background-color: #ffeedd; /* пастельный, ближайшие лекции */
+        }
+        .schedule-item.past {
+            background-color: #cccccc; /* темный / серый, прошедшие лекции */
+            color: #666666;
+        }
+        .schedule-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+        }
+
+            .schedule-item { 
+            padding: 1rem; 
+            margin: 0.5rem 0; 
+            border-radius: 8px; 
+            display: none; /* hidden by default */
+        }
+        .schedule-item.show { display: block; }
+
+        /* Past and upcoming lecture colors */
+        .schedule-item.upcoming { background-color: #ffeedd; }
+        .schedule-item.past { background-color: #cccccc; color: #666666; }
+
+                /* Контейнер кнопок */
+        .schedule-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Стили самих кнопок */
+        .filter-btn {
+            background-color: #f0f0f0;
+            color: #1e3a8a;
+            border: 2px solid #1e3a8a;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        /* Эффект при наведении */
+        .filter-btn:hover {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Активная кнопка */
+        .filter-btn.active {
+            background-color: #1e3a8a;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        }
     </style>
+    
 </head>
 <body>
     <!-- Navigation -->
@@ -551,113 +615,176 @@
         </div>
     </section>
 
-    <!-- Courses Section -->
-    <section id="courses">
-        <div class="container">
-            <h2 class="section-title font-playfair">Three Pillars of Creativity</h2>
-            <p class="section-subtitle">A comprehensive journey through storytelling, production, and cinema appreciation</p>
-            
-            <div class="courses-grid">
-                <div class="course-card writing">
-                    <div class="course-icon">✏️</div>
-                    <h3 class="course-title font-playfair">Creative Writing</h3>
-                    <p class="course-description">
-                        September - December: Young people and adults learn to write scripts and demonstrate them 
-                        during readings on stage at Viirus Theater on Jätkäsaari in Helsinki.
-                    </p>
-                    <ul class="course-features">
-                        <li>📅 September - December</li>
-                        <li>🎭 Theater readings at Viirus</li>
-                        <li>👥 Collaborative workshops</li>
-                    </ul>
-                    <a href="#team" class="button button-white">Learn More</a>
-                </div>
+        <!-- Courses Section -->
+        <section id="courses">
+            <div class="container">
+                <h2 class="section-title font-playfair">Three Pillars of Creativity</h2>
+                <p class="section-subtitle">A comprehensive journey through storytelling, production, and cinema appreciation</p>
+                
+                <div class="courses-grid">
+                    <div class="course-card writing">
+                        <div class="course-icon">✏️</div>
+                        <h3 class="course-title font-playfair">Creative Writing</h3>
+                        <p class="course-description">
+                            September - December: Young people and adults learn to write scripts and demonstrate them 
+                            during readings on stage at Viirus Theater on Jätkäsaari in Helsinki.
+                        </p>
+                        <ul class="course-features">
+                            <li>📅 September - December</li>
+                            <li>🎭 Theater readings at Viirus</li>
+                            <li>👥 Collaborative workshops</li>
+                        </ul>
+                        <a href="#team" class="button button-white">Learn More</a>
+                    </div>
 
-                <div class="course-card filmmaking">
-                    <div class="course-icon">🎥</div>
-                    <h3 class="course-title font-playfair">Film Making</h3>
-                    <p class="course-description">
-                        January - May: Based on scripts, storyboards are created, films are shot together with 
-                        filming professionals and editing is produced. Result is presented at the premiere in May.
-                    </p>
-                    <ul class="course-features">
-                        <li>📅 January - May</li>
-                        <li>🎬 Professional equipment</li>
-                        <li>⭐ May premiere</li>
-                    </ul>
-                    <a href="#films" class="button button-white">Learn More</a>
-                </div>
+                    <div class="course-card filmmaking">
+                        <div class="course-icon">🎥</div>
+                        <h3 class="course-title font-playfair">Film Making</h3>
+                        <p class="course-description">
+                            January - May: Based on scripts, storyboards are created, films are shot together with 
+                            filming professionals and editing is produced. Result is presented at the premiere in May.
+                        </p>
+                        <ul class="course-features">
+                            <li>📅 January - May</li>
+                            <li>🎬 Professional equipment</li>
+                            <li>⭐ May premiere</li>
+                        </ul>
+                        <a href="#films" class="button button-white">Learn More</a>
+                    </div>
 
-                <div class="course-card cinema">
-                    <div class="course-icon">💬</div>
-                    <h3 class="course-title font-playfair">Cinema Talks</h3>
-                    <p class="course-description">
-                        Live film discussions and engaging lectures about cinema history that help better understand 
-                        the language of cinematography. Separate registration required.
-                    </p>
-                    <ul class="course-features">
-                        <li>🕕 04:00 PM - 06:00 PM</li>
-                        <li>📍 Jätkäsaari / Mankaa</li>
-                        <li>💰 €15 for guests</li>
-                    </ul>
-                    <a href="#schedule" class="button" style="background: #1e3a8a; color: white;">View Schedule</a>
+                    <div class="course-card cinema">
+                        <div class="course-icon">💬</div>
+                        <h3 class="course-title font-playfair">Cinema Talks</h3>
+                        <p class="course-description">
+                            Live film discussions and engaging lectures about cinema history that help better understand 
+                            the language of cinematography. Separate registration required.
+                        </p>
+                        <ul class="course-features">
+                            <li>🕕 04:00 PM - 06:00 PM</li>
+                            <li>📍 Mankaa, Espoo</li>
+                            <li>💰 €15 for guests</li>
+                        </ul>
+                        <button id="toggleSchedule" class="button" style="background: #1e3a8a; color: white;">View Schedule</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Cinema Talks Schedule -->
-    <!-- <section id="schedule" class="schedule">
+    <!-- Cinema Talks Schedule (Initially Hidden) -->
+    <section id="schedule" class="schedule" style="display: none;">
         <div class="container">
             <h2 class="section-title font-playfair">Cinema Talks Schedule</h2>
             <p class="section-subtitle">Join us for engaging discussions about cinema history and technique</p>
-            
-            <div class="schedule-grid">
-                <div class="schedule-item">
-                    <div class="schedule-date">12.09.2025</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">03.10.2025</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">07.11.2025</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">05.12.2025</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">16.01.2026</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">13.02.2026</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">06.03.2026</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">10.04.2026</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-date">08.05.2026</div>
-                    <div class="schedule-time">18:00 - 21:00</div>
-                </div>
+
+            <!-- Filter Buttons -->
+            <div class="schedule-filters" style="text-align: center; margin-bottom: 1rem;">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="revisiting-history">Revisiting History</button>
+                <button class="filter-btn" data-filter="authorial-animation">Authorial Animation</button>
+                <button class="filter-btn" data-filter="documentary">Documentary Cinema +</button>
+                <button class="filter-btn" data-filter="titans-poets">Titans & Poets</button>
             </div>
-            
+
+            <div class="schedule-grid">
+
+                <!-- Autumn 2025 -->
+                <h3 style="grid-column: 1/-1; margin-top: 2rem;">Autumn 2025</h3>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">06.09.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 1:</strong> The Birth of Cinema...</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">20.09.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 2:</strong> Norman McLaren...</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">04.10.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 3:</strong> Founders of Documentary Cinema...</div>
+                </div>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">28.10.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 4:</strong> Luchino Visconti "Bellissima"</div>
+                </div>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">01.11.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 5:</strong> The Beginnings of Sound Cinema...</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">15.11.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 6:</strong> Zbigniew Rybczyński</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">29.11.2025</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 7:</strong> Mikhail Kalik "To Love"</div>
+                </div>
+
+                <!-- Winter 2025–26 -->
+                <h3 style="grid-column: 1/-1; margin-top: 2rem;">Winter 2025–26</h3>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">17.01.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 8:</strong> Orson Welles "Citizen Kane"</div>
+                </div>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">31.01.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 9:</strong> Sergei Eisenstein...</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">14.02.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 10:</strong> Jan Švankmajer</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">28.02.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 11:</strong> Sergei Miroshnichenko "Born in the USSR"</div>
+                </div>
+
+                <!-- Spring 2026 -->
+                <h3 style="grid-column: 1/-1; margin-top: 2rem;">Spring 2026</h3>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">14.03.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 12:</strong> Ed Wood "Plan 9 from Outer Space"</div>
+                </div>
+                <div class="schedule-item revisiting-history">
+                    <div class="schedule-date">28.03.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 13:</strong> To be announced</div>
+                </div>
+                <div class="schedule-item authorial-animation">
+                    <div class="schedule-date">12.04.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 14:</strong> To be announced</div>
+                </div>
+                <div class="schedule-item documentary">
+                    <div class="schedule-date">26.04.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 15:</strong> Popular Science Films. Felix Sobolev</div>
+                </div>
+                <div class="schedule-item titans-poets">
+                    <div class="schedule-date">02.05.2026</div>
+                    <div class="schedule-time">16:00 - 18:00</div>
+                    <div class="schedule-topic"><strong>Lecture 16:</strong> Pier Paolo Pasolini...</div>
+                </div>
+
+            </div>
+
             <div style="text-align: center; margin-top: 2rem;">
                 <a href="https://forms.office.com/r/7Z4rt6pNiP" class="button button-golden">Register for Cinema Talks</a>
             </div>
         </div>
-    </section> -->
+    </section>
 
-    <!-- Team Section -->
+<!-- Team Section -->
     <section id="team">
         <div class="container">
             <h2 class="section-title font-playfair">Our Creative Team</h2>
@@ -792,7 +919,7 @@
 
             <div style="margin-top: 2rem;">
                 <h4 style="font-size: 1.25rem; margin-bottom: 1rem;">Cinema Talks Only</h4>
-                <p style="margin-bottom: 1rem;">€10 for guests • Included for course participants</p>
+                <p style="margin-bottom: 1rem;">€15 for guests • Included for course participants</p>
                 <!-- Microsoft Forms link will be added here -->
                 <a href="#" class="button button-golden" onclick="alert('Microsoft Forms link will be provided by organizers')">
                     Register for Cinema Talks
@@ -801,8 +928,8 @@
             
             <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">👥 Ages 15-21 years</div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">📅 30th August 2025 start</div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">📍 Espoo/Helsinki, Finland</div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">📅 September 2025 start</div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">📍 Helsinki, Finland</div>
             </div>
         </div>
     </section>
@@ -858,6 +985,82 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        const toggleBtn = document.getElementById('toggleSchedule');
+        const scheduleSection = document.getElementById('schedule');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const scheduleItems = document.querySelectorAll('.schedule-item');
+
+        // Toggle schedule visibility
+        toggleBtn.addEventListener('click', () => {
+            if (scheduleSection.style.display === 'none') {
+                scheduleSection.style.display = 'block';
+                toggleBtn.textContent = 'Hide Schedule';
+                scheduleSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                scheduleSection.style.display = 'none';
+                toggleBtn.textContent = 'View Schedule';
+            }
+        });
+
+        // Highlight past and upcoming lectures
+        const today = new Date();
+        const oneMonthLater = new Date();
+        oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
+
+        scheduleItems.forEach(item => {
+            const dateText = item.querySelector('.schedule-date').textContent;
+            const parts = dateText.split('.');
+            const itemDate = new Date(parts[2], parts[1] - 1, parts[0]);
+
+            if (itemDate < today) {
+                item.classList.add('past');
+            } else if (itemDate <= oneMonthLater) {
+                item.classList.add('upcoming');
+            }
+        });
+
+        // Filter lectures by theme
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                scheduleItems.forEach(item => {
+                    if (filter === 'all') {
+                        item.classList.add('show');
+                    } else {
+                        item.classList.toggle('show', item.classList.contains(filter));
+                    }
+                });
+            });
+        });
+
+        // Show all lectures by default
+        document.querySelector('.filter-btn[data-filter="all"]').click();
+    </script>
+        <script>
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.getAttribute('data-filter');
+
+            // Показываем/скрываем лекции
+            scheduleItems.forEach(item => {
+                if (filter === 'all') {
+                    item.classList.add('show');
+                } else {
+                    item.classList.toggle('show', item.classList.contains(filter));
+                }
+            });
+
+            // Обновляем активную кнопку
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    // Изначально активна кнопка "All"
+    document.querySelector('.filter-btn[data-filter="all"]').click();
     </script>
 </body>
 </html>
