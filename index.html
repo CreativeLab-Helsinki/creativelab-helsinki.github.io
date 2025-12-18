@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreativeLab Helsinki - Creative Writing, Film Making & Cinema Talks</title>
-    <meta name="description" content="CreativeLab Helsinki offers comprehensive creative education courses including Creative Writing, Film Making, and Cinema Talks for ages 15-21. Join our year-long program starting 30th Aug 2025.">
+    <title>CreativeLab Helsinki - Screenwriting & Filmmaking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --cinema-black: #0a0a0a;
+            --script-white: #f5f5f5;
+            --action-red: #e11d48;
+            --spotlight-gold: #fbbf24;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,25 +22,36 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cinema-black);
+            color: var(--script-white);
             line-height: 1.6;
-            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Screenplay Font Style */
+        .font-script {
+            font-family: 'Courier Prime', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .font-playfair {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         /* Navigation */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -46,9 +66,10 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #1e3a8a;
+            color: var(--script-white);
+            text-decoration: none;
         }
 
         .nav-links {
@@ -59,621 +80,282 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #374151;
-            font-weight: 500;
-            transition: color 0.3s;
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #ef4444;
-        }
+        .nav-links a:hover { color: var(--action-red); }
 
         .cta-button {
-            background: #ef4444;
+            background: var(--action-red);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 50px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #dc2626;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: 0.3s;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a, #374151, #4b5563);
-            color: white;
-            padding: 100px 0 50px;
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
             text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/film-grain.png');
+            opacity: 0.2;
+            pointer-events: none;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
-        .hero .highlight {
-            color: #ef4444;
+        .highlight {
+            color: var(--action-red);
+            border-bottom: 4px solid var(--action-red);
         }
 
         .hero p {
-            font-size: 1.125rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 1.2rem;
+            color: #d4d4d4;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
+        /* Mission "Script" Style */
+        .mission {
+            background: #111;
+            padding: 80px 0;
+            border-top: 1px solid #222;
         }
 
-        .hero-info {
-            display: flex;
-            justify-content: center;
+        .mission-box {
+            background: #fff;
+            color: #333;
+            padding: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 20px 20px 0px var(--action-red);
+            font-family: 'Courier Prime', monospace;
+        }
+
+        /* Course Cards */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            flex-wrap: wrap;
-            opacity: 0.8;
+            padding: 60px 0;
         }
 
-        .hero-image.phone-only {
-            display: none;
-            }
-
-            /* Show image only on screens 600px wide or less (phones) */
-            @media (max-width: 600px) {
-            .hero-image.phone-only {
-                display: block;
-                width: 100%;
-                max-width: 300px; /* adjust for phone */
-                height: auto;
-                margin: 1.5rem auto;
-                border-radius: 1rem;
-            }
-            }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .course-card {
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Section Styles */
-        section {
-            padding: 40px 0;
+        .course-card:hover {
+            border-color: var(--action-red);
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .course-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+        
+        .btn-outline {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--action-red);
+            color: var(--action-red);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--action-red);
+            color: white;
+        }
+
+        /* Team Section - ADDED MISSING STYLES */
+        #team {
+            padding: 80px 0;
+            background: #0a0a0a;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: #1e3a8a;
-            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.125rem;
-            color: #6b7280;
-            margin-bottom: 2rem;
+            color: #a3a3a3;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
         }
 
-        /* Mission Section */
-        .mission {
-            background: #f9fafb;
-        }
-
-        .mission-text {
-            font-size: 1rem;
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto;
-            color: #374151;
-            line-height: 1.5;
-        }
-
-        /* Courses Grid */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .course-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            text-align: center;
-        }
-
-        .course-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .course-card.writing {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            color: white;
-        }
-
-        .course-card.filmmaking {
-            background: linear-gradient(135deg, #1e3a8a, #1e40af);
-            color: white;
-        }
-
-        .course-card.cinema {
-            background: linear-gradient(135deg, #eab308, #f59e0b);
-            color: #1e3a8a;
-        }
-
-        .course-icon {
-            font-size: 3rem;
-            margin-bottom: 0.75rem;
-            opacity: 0.8;
-        }
-
-        .course-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 0.75rem;
-        }
-
-        .course-description {
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-
-        .course-features {
-            list-style: none;
-            margin-bottom: 1.25rem;
-        }
-
-        .course-features li {
-            margin-bottom: 0.5rem;
-            opacity: 0.8;
-        }
-
-        /* Cinema Talks Schedule */
-        .schedule {
-            background: #f3f4f6;
-        }
-
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        .schedule-item {
-            background: white;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .schedule-date {
-            color: #ef4444;
-            font-weight: bold;
-            font-size: 1.125rem;
-        }
-
-        .schedule-time {
-            color: #6b7280;
-            font-size: 0.875rem;
-        }
-
-        /* Team Section */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .team-member {
-            background: #f9fafb;
-            padding: 1.5rem;
-            border-radius: 1rem;
             text-align: center;
+            padding: 2rem;
+            background: var(--glass);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            transition: 0.4s;
         }
 
-        .team-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        .team-icon.coral { background: #ef4444; }
-        .team-icon.navy { background: #1e3a8a; }
-        .team-icon.golden { background: #eab308; color: #1e3a8a; }
-
-        .team-name {
-            font-weight: bold;
-            color: #1e3a8a;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-role {
-            color: #ef4444;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-description {
-            color: #6b7280;
-            font-size: 0.875rem;
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: var(--action-red);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .team-photo {
             width: 150px;
             height: 150px;
-            object-fit: cover;
             border-radius: 50%;
-            margin: 0 auto 1rem;
+            object-fit: cover;
+            margin: 0 auto 1.5rem;
             display: block;
+            border: 3px solid var(--action-red);
+            background: #222;
         }
 
-        /* Films Section */
-        .films {
-            background: #1e3a8a;
-            color: white;
-        }
-
-        .films-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .film-card {
-            background: #374151;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            text-align: center;
-        }
-
-        .film-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-
-        .film-title {
-            font-size: 1.5rem;
+        .team-name {
+            font-size: 1.3rem;
             font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .film-directors {
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Registration Section */
-        .registration {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            color: white;
-            text-align: center;
-        }
-
-        .registration-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .registration-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 1rem;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .price-note {
-            font-size: 1.25rem;
-            opacity: 0.8;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            margin: 0.5rem;
-        }
-
-        .button-white {
-            background: white;
-            color: #ef4444;
-        }
-
-        .button-white:hover {
-            background: #f3f4f6;
-        }
-
-        .button-golden {
-            background: #eab308;
-            color: #1e3a8a;
-        }
-
-        .button-golden:hover {
-            background: #f59e0b;
-        }
-
-        /* Footer */
-        footer {
-            background: #1e3a8a;
-            color: white;
-            padding: 2rem 0;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #d1d5db;
-            text-decoration: none;
             margin-bottom: 0.5rem;
-            display: block;
+            color: var(--script-white);
         }
 
-        .footer-section a:hover {
-            color: #ef4444;
+        .team-role {
+            color: var(--action-red);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
         }
 
-        .footer-bottom {
-            border-top: 1px solid #374151;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+        .team-description {
+            color: #a3a3a3;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
-        .support-text {
-            color: #9ca3af;
-            font-size: 0.875rem;
+        /* Film Gallery */
+        .film-card {
+            background: #000;
+            border-left: 5px solid var(--spotlight-gold);
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
-        /* Responsive */
+        .film-title { color: var(--spotlight-gold); margin-bottom: 10px; }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #222;
+            background: #050505;
+        }
+
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-info {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-
-                /* Цвета для лекций */
-        .schedule-item.upcoming {
-            background-color: #ffeedd; /* пастельный, ближайшие лекции */
-        }
-        .schedule-item.past {
-            background-color: #cccccc; /* темный / серый, прошедшие лекции */
-            color: #666666;
-        }
-        .schedule-item {
-            padding: 1rem;
-            margin: 0.5rem 0;
-            border-radius: 8px;
-        }
-
-            .schedule-item { 
-            padding: 1rem; 
-            margin: 0.5rem 0; 
-            border-radius: 8px; 
-            display: none; /* hidden by default */
-        }
-        .schedule-item.show { display: block; }
-
-        /* Past and upcoming lecture colors */
-        .schedule-item.upcoming { background-color: #ffeedd; }
-        .schedule-item.past { background-color: #cccccc; color: #666666; }
-
-                /* Контейнер кнопок */
-        .schedule-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Стили самих кнопок */
-        .filter-btn {
-            background-color: #f0f0f0;
-            color: #1e3a8a;
-            border: 2px solid #1e3a8a;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            min-width: 120px;
-        }
-
-        /* Эффект при наведении */
-        .filter-btn:hover {
-            background-color: #1e3a8a;
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        /* Активная кнопка */
-        .filter-btn.active {
-            background-color: #1e3a8a;
-            color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-        }
-
-                .footer-line {
-            border: none;
-            border-top: 1px solid rgba(255,255,255,0.2); /* тонкая полупрозрачная линия */
-            margin: 0.5 rem auto;
-            width: 90%;
+            .nav-links { display: none; }
+            .mission-box { padding: 30px; margin: 0 10px; }
+            .team-grid { grid-template-columns: 1fr; }
         }
     </style>
-    
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo font-playfair">CreativeLab <span style="font-size: 0.8rem; color: #6b7280;">Helsinki</span></div>
-                <ul class="nav-links">
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#films">Films</a></li>
-                    <!-- <li><a href="#registration">Register</a></li> -->
-                    <li><a href="#contacts">Contacts</a></li>
-                </ul>
-                <a href="https://forms.office.com/r/tPir93Pp9C" class="cta-button">Register Now</a>
-            </div>
+        <div class="container nav-container">
+            <a href="#" class="logo font-script">CreativeLab // HEL</a>
+            <ul class="nav-links">
+                <li><a href="#courses">Production</a></li>
+                <li><a href="#team">Crew</a></li>
+                <li><a href="#films">Screenings</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>
+            <a href="https://forms.office.com/r/tPir93Pp9C" class="cta-button">Apply Now</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <img src="attached_assets/team-b.png" alt="Team" class="hero-image phone-only" />
-            <h1 class="font-playfair">Create Your <span class="highlight">Cinematic</span> Journey</h1>
-            <p>From scriptwriting to film production. A comprehensive year-long program combining creative writing, filmmaking, and cinema studies in Helsinki / Espoo.</p>
-            <div class="hero-buttons">
-                <a href="https://forms.office.com/r/tPir93Pp9C" class="button button-white">🎬 Start Your Journey</a>
-                <a href="https://forms.office.com/r/tPir93Pp9C" class="button" style="background: #eab308; color: #1e3a8a;">📅 Trial Lesson</a>
-            </div>
-
-            <div class="hero-info">
-                <div class="info-item">👥 Ages 15+ and 24+</div>
-                <div class="info-item">💰 €60/month (12-month program)</div>
-                <div class="info-item">✍️ €350 (8-lesson Creative Writing course)</div>
-                <div class="info-item">📍 Helsinki & Espoo</div>
+            <h4 class="font-script" style="color: var(--spotlight-gold); margin-bottom: 1rem;">Now Casting: Visionaries 2026</h4>
+            <h1 class="font-playfair">Write. Shoot. <span class="highlight">Edit.</span></h1>
+            <p>Master the art of visual storytelling in a year-long cinematic laboratory. Transform your ideas into professional-grade short films.</p>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#courses" class="cta-button" style="padding: 1rem 2rem;">Explore Courses</a>
+                <a href="#films" class="cta-button" style="background: transparent; border: 1px solid white; padding: 1rem 2rem;">Watch Student Films</a>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
     <section class="mission">
         <div class="container">
-            <h2 class="section-title font-playfair">Our Mission</h2>
-            <p class="mission-text">
-                We aim to form a community where participants master scriptwriting and fundamentals of film production, 
-                learn to collaborate, develop empathy and creative thinking. We strive to create a space where everyone 
-                feels confident, free and inspired — to create magic both within the community and beyond its boundaries.
-            </p>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section id="courses" class="py-16 px-6 bg-black/10">
-        <div class="container mx-auto text-center">
-            <h2 class="section-title font-playfair text-4xl mb-4 text-white">Three Pillars of Creativity</h2>
-            <p class="section-subtitle text-lg mb-12 text-white/70">A comprehensive journey through storytelling, production, and cinema appreciation</p>
-            
-            <div class="courses-grid grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Creative Writing -->
-                <div class="course-card writing p-8 text-center flex flex-col rounded-3xl bg-gradient-to-tr from-pink-500 to-violet-500 shadow-lg">
-                    <div class="course-icon text-4xl mb-4">✏️</div>
-                    <h3 class="course-title font-playfair text-2xl mb-4 text-white">Creative Writing</h3>
-                    <p class="course-description mb-6 text-white/80">
-                        September - December: Young people and adults learn to write scripts and demonstrate them during readings on stage at Viirus Theater in Helsinki.
-                    </p>
-                    <div class="mt-auto">
-                        <a href="#team" class="button py-3 px-4 rounded-2xl bg-white text-black font-semibold hover:shadow-lg transition inline-block w-full md:w-auto">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Film Making -->
-                <div class="course-card filmmaking p-8 text-center flex flex-col rounded-3xl bg-gradient-to-tr from-orange-500 to-yellow-500 shadow-lg">
-                    <div class="course-icon text-4xl mb-4">🎥</div>
-                    <h3 class="course-title font-playfair text-2xl mb-4 text-white">Film Making</h3>
-                    <p class="course-description mb-6 text-white/80">
-                        January - May: Based on scripts, storyboards are created, films are shot with professionals and edited. Presented at the premiere in May.
-                    </p>
-                    <div class="mt-auto">
-                        <a href="#films" class="button py-3 px-4 rounded-2xl bg-white text-black font-semibold hover:shadow-lg transition inline-block w-full md:w-auto">Learn More</a>
-                    </div>
-                </div>
-
-                <!-- Cinema Talks -->
-                <div class="course-card cinema p-8 text-center flex flex-col rounded-3xl bg-gradient-to-tr from-blue-700 to-blue-900 shadow-lg">
-                    <div class="course-icon text-4xl mb-4">💬</div>
-                    <h3 class="course-title font-playfair text-2xl mb-4 text-white">Cinema Talks</h3>
-                    <p class="course-description mb-6 text-white/80">
-                        Live film discussions and engaging lectures about cinema history to better understand the language of cinematography. Separate registration required.
-                    </p>
-                    <div class="mt-auto">
-                        <a href="https://creativelab-helsinki.github.io/cinematalks/" class="button py-3 px-4 rounded-2xl bg-white text-black font-semibold hover:shadow-lg transition inline-block w-full md:w-auto">View Schedule</a>
-                    </div>
-                </div>
+            <div class="mission-box">
+                <p class="font-script" style="color: #888; margin-bottom: 20px;">SCENE 1: THE VISION - INT. HELSINKI STUDIO</p>
+                <p>We are building a community of filmmakers. Our mission is simple: To provide the tools, the stage, and the expertise for you to master <strong>Screenwriting</strong> and <strong>Film Production</strong>.</p>
+                <br>
+                <p>In this space, we collaborate. We develop empathy. We create magic.</p>
+                <p class="font-script" style="text-align: right; margin-top: 20px;">FADE OUT.</p>
             </div>
         </div>
     </section>
 
+    <section id="courses" class="container">
+        <h2 class="font-playfair" style="text-align: center; font-size: 3rem; margin-top: 80px;">The Curriculum</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <span class="course-icon">✍️</span>
+                <h3 class="font-script">01. Screenwriting</h3>
+                <p style="color: #a3a3a3; margin-top: 1rem;">From logline to final draft. Learn structure, dialogue, and character arcs. Ends with live readings at Viirus Theater.</p>
+                <a href="#" class="btn-outline">View Syllabus</a>
+            </div>
+            <div class="course-card">
+                <span class="course-icon">🎬</span>
+                <h3 class="font-script">02. Production</h3>
+                <p style="color: #a3a3a3; margin-top: 1rem;">Hands-on filmmaking. Storyboarding, lighting, and directing. We shoot with professional crew and gear.</p>
+                <a href="#" class="btn-outline">Equipment List</a>
+            </div>
+            <div class="course-card">
+                <span class="course-icon">🍿</span>
+                <h3 class="font-script">03. Cinema Talks</h3>
+                <p style="color: #a3a3a3; margin-top: 1rem;">Analyze the masters. Deep dives into film history and theory to sharpen your visual vocabulary.</p>
+                <a href="#" class="btn-outline">Lecture Dates</a>
+            </div>
+        </div>
+    </section>
 
-
-
-    <!-- Team Section -->
     <section id="team">
         <div class="container">
             <h2 class="section-title font-playfair">Our Creative Team</h2>
@@ -681,195 +363,89 @@
             
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="attached_assets/mikhail.jpg" alt="Mikhail Durnenkov" class="team-photo">
+                    <img src="attached_assets/mikhail.jpg" alt="Mikhail Durnenkov" class="team-photo" onerror="this.src='https://via.placeholder.com/150/222/fff?text=MD'">
                     <div class="team-name">Mikhail Durnenkov</div>
                     <div class="team-role">Art Director</div>
                     <div class="team-description">Leading the creative vision, writing, and artistic direction of all projects</div>
                 </div>
 
                 <div class="team-member">
-                    <img src="attached_assets/sasha.png" alt="Alexandra Dunaeva" class="team-photo">
+                    <img src="attached_assets/sasha.png" alt="Alexandra Dunaeva" class="team-photo" onerror="this.src='https://via.placeholder.com/150/222/fff?text=AD'">
                     <div class="team-name">Alexandra Dunaeva</div>
                     <div class="team-role">Theater Teacher</div>
                     <div class="team-description">Guiding students in performance and theatrical presentation</div>
                 </div>
 
                 <div class="team-member">
-                    <img src="attached_assets/ksenia.jpg" alt="Ksenia Peretrukhina" class="team-photo">
+                    <img src="attached_assets/ksenia.jpg" alt="Ksenia Peretrukhina" class="team-photo" onerror="this.src='https://via.placeholder.com/150/222/fff?text=KP'">
                     <div class="team-name">Ksenia Peretrukhina</div>
                     <div class="team-role">Contemporary Artist</div>
                     <div class="team-description">Cinema Talks - Film discussions and cinema history lectures</div>
                 </div>
 
                 <div class="team-member">
-                    <img src="attached_assets/darina.jpg" alt="Darina Radionova" class="team-photo">
+                    <img src="attached_assets/darina.jpg" alt="Darina Radionova" class="team-photo" onerror="this.src='https://via.placeholder.com/150/222/fff?text=DR'">
                     <div class="team-name">Darina Rodionova</div>
                     <div class="team-role">Video & Editing</div>
                     <div class="team-description">Professional filming techniques and post-production</div>
                 </div>
-
+            
                 <div class="team-member">
-                    <img src="attached_assets/dima.png" alt="Dmitry Gavrykov" class="team-photo">
-                    <div class="team-name">Dmitry Gavrykov</div>
-                    <div class="team-role">Producer</div>
-                    <div class="team-description">Community engagement and production coordination</div>
-                </div>
-
-                <div class="team-member">
-                    <img src="attached_assets/ira.jpeg" alt="Irina Gavrykova" class="team-photo">
+                    <img src="attached_assets/ira.jpeg" alt="Irina Gavrykova" class="team-photo" onerror="this.src='https://via.placeholder.com/150/222/fff?text=IG'">
                     <div class="team-name">Irina Gavryukova</div>
-                    <div class="team-role">Producer</div>
+                    <div class="team-role">Executive Producer</div>
                     <div class="team-description">Operations, community engagement and production coordination</div>
                 </div>
 
                 <div class="team-member">
-                    <img src="attached_assets/maria.png" alt="Maria Rohnonen" class="team-photo">
+                    <img src="attached_assets/dima.png" alt="Dmitry Gavrykov" class="team-photo" onerror="this.src='https://via.placeholder.com/150/222/fff?text=DG'">
+                    <div class="team-name">Dmitry Gavrykov</div>
+                    <div class="team-role">Advisory Producer</div>
+                    <div class="team-description">Community engagement and production coordination</div>
+                </div>
+
+                <div class="team-member">
+                    <img src="attached_assets/maria.png" alt="Maria Rohnonen" class="team-photo" onerror="this.src='https://via.placeholder.com/150/222/fff?text=MR'">
                     <div class="team-name">Maria Rohnonen</div>
-                    <div class="team-role">Producer</div>
+                    <div class="team-role">Founding Advisor</div>
                     <div class="team-description">Community engagement and production coordination</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Films Section -->
-    <section id="films" class="films">
+    <section id="films" style="background: #111; padding: 80px 0;">
         <div class="container">
-            <h2 class="section-title font-playfair" style="color: white;">Featured Films</h2>
-            <p class="section-subtitle" style="color: #d1d5db;">Showcasing the creative achievements of our students</p>
-            
-            <div class="films-grid">
-                <div class="film-card">
-                    <div class="film-icon" style="color: #ef4444;">▶️</div>
-                    <h3 class="film-title font-playfair">The Next Station</h3>
-                    <p class="film-directors">Directed by: Daniil Daniushevsky, Mikhail Vaulin, Matvey Durnenkov</p>
-                    <a href="https://www.canva.com/design/DAGt09lxEhk/6Oq7kj3U_NWx3XSp_aXCCg/watch?utm_content=DAGt09lxEhk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h26c91e8ba2" class="button" style="background: #ef4444;">▶️ Watch Film</a>
-                </div>
-                
-                <div class="film-card">
-                    <div class="film-icon" style="color: #eab308;">▶️</div>
-                    <h3 class="film-title font-playfair">Concert for Piano & Cello</h3>
-                    <p class="film-directors">Directed by: Evgeny Rozhnov, Luka Ivanov, Vladislav Rayak</p>
-                    <a href="https://www.canva.com/design/DAGt1Ko5od8/FYBrcmFZtnABi617-sTEuQ/watch?utm_content=DAGt1Ko5od8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=heb76d7517f" class="button button-golden">▶️ Watch Film</a>
-                </div>
-                
-                <div class="film-card">
-                    <div class="film-icon" style="color: #ef4444;">▶️</div>
-                    <h3 class="film-title font-playfair">Between the Lines</h3>
-                    <p class="film-directors">Directed by: Nataliya Rozhnova, Ekaterina Nedostupova, Anastasiia Chala</p>
-                    <a href="https://www.canva.com/design/DAGt03oB1Ho/lp7gPSiIOCYkAQ6smly60Q/watch?utm_content=DAGt03oB1Ho&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8a823a7e85" class="button" style="background: #ef4444;">▶️ Watch Film</a>
-                </div>
+            <h2 class="font-playfair" style="margin-bottom: 40px;">Recent Premiers</h2>
+            <div class="film-card">
+                <h3 class="font-script film-title">The Next Station</h3>
+                <p>Directed by Daniil Daniushevsky, Mikhail Vaulin, Matvey Durnenkov</p>
+                <a href="https://www.canva.com/design/DAGt09lxEhk/6Oq7kj3U_NWx3XSp_aXCCg/watch?utm_content=DAGt09lxEhk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h26c91e8ba2" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH TRAILER ]</a>
             </div>
-            
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="color: #d1d5db; margin-bottom: 1.5rem;">All films will be available in Finnish and English soon</p>
-                <a href="https://www.canva.com/design/DAGt1O0vfhA/NTzsAKDCUEkcXMR-mmXHiA/watch?utm_content=DAGt1O0vfhA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h697ba1b99b" class="button button-white">🔗 View extra film: Snap to memories</a>
+            <div class="film-card">
+                <h3 class="font-script film-title">Concert for Piano & Cello</h3>
+                <p>Directed by: Evgeny Rozhnov, Luka Ivanov, Vladislav Rayak</p>
+                <a href="https://www.canva.com/design/DAGt1Ko5od8/FYBrcmFZtnABi617-sTEuQ/watch?utm_content=DAGt1Ko5od8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=heb76d7517f" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH TRAILER ]</a>
+            </div>
+            <div class="film-card">
+                <h3 class="font-script film-title">Between the Lines</h3>
+                <p>Directed by: Nataliya Rozhnova, Ekaterina Nedostupova, Anastasiia Chala</p>
+                <a href="https://www.canva.com/design/DAGt03oB1Ho/lp7gPSiIOCYkAQ6smly60Q/watch?utm_content=DAGt03oB1Ho&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8a823a7e85" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH TRAILER ]</a>
+            </div>
+            <div class="film-card">
+                <h3 class="font-script film-title">Snap to memories</h3>
+                <p>An experimental narrative on memory. Created in 48 hours for Uneton48</p>
+                <a href="https://www.canva.com/design/DAGt1O0vfhA/NTzsAKDCUEkcXMR-mmXHiA/watch?utm_content=DAGt1O0vfhA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h697ba1b99b" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH TRAILER ]</a>
             </div>
         </div>
     </section>
 
-    <!-- Registration Section -->
-    <!-- <section id="registration" class="registration">
-        <div class="container">
-            <h2 class="section-title font-playfair" style="color: white;">Ready to Begin Your Creative Journey?</h2>
-            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9;">
-                Join CreativeLab and transform your stories into compelling scripts and cinematic experiences. 
-                Limited spots available for our 2025-2026 program.
-            </p>
-            
-            <div class="registration-grid">
-                <div class="registration-card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Full Program</h3>
-                    <div class="price">€60<span class="price-note">/month</span></div>
-                    <p style="margin-bottom: 1.5rem;">Creative Writing + Film Making + Cinema Talks</p>
-                    <!-- Microsoft Forms link will be added here -->
-                    <!-- <a href="https://forms.office.com/r/tPir93Pp9C" class="button button-white"">
-                        Register for Full Program
-                    </a>
-                </div>
-
-                <div class="registration-card">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Trial Lesson</h3>
-                    <div class="price">FREE</div>
-                    <p style="margin-bottom: 1.5rem;">August 16th - Experience our approach</p>
-                    Microsoft Forms link will be added here
-                    <<a href="href="https://forms.office.com/r/tPir93Pp9C" class="button button-golden" onclick="alert('Microsoft Forms link will be provided by organizers')">
-                        Book Trial Lesson
-                    </a>
-                </div>
-            </div>
-
-            <div style="margin-top: 2rem;">
-                <h4 style="font-size: 1.25rem; margin-bottom: 1rem;">Cinema Talks Only</h4>
-                <p style="margin-bottom: 1rem;">€15 for guests • Included for course participants</p> -->
-                <!-- Microsoft Forms link will be added here -->
-                <!-- <a href="https://creativelab-helsinki.github.io/cinematalks/" class="button button-golden"">
-                    Register for Cinema Talks
-                </a>
-            </div>
-            
-            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 3rem; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">👥 Ages 15-21 years</div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">📅 September 2025 start</div>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">📍 Helsinki, Finland</div>
-            </div>
-        </div> -->
-    <!-- </section> -->
-
-    <hr class="footer-line">
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="font-playfair">CreativeLab Helsinki</h3>
-                    <p>Empowering young creatives through comprehensive storytelling and filmmaking education in the heart of Helsinki.</p>
-                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <a href="https://www.instagram.com/creativelabhelsinki/">📷 Instagram</a>
-                        <a href="https://www.facebook.com/profile.php?id=61565014807067">📘 Facebook</a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <a href="#courses">Courses</a>
-                    <a href="#team">Our Team</a>
-                    <a href="#films">Films</a>
-                    <!-- <a href="#registration">Register</a> -->
-                </div>
-                
-                <div id="contacts" class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>📍 International Language Club<br>
-                    Saukonpaadenranta 4G, 00180 Helsinki</p>
-                    <p>📧 interlang.home@gmail.com</p>
-                    <p>📞 +358 40 1314588</p>
-                </div>
-            </div>            
-            <div class="footer-bottom">
-                <div>© 2025 CreativeLab Helsinki. All rights reserved.</div>
-                <div class="support-text">❤️ Supported by Opetus- ja kulttuuriministeriö Finland</div>
-            </div>
+        <div class="container" style="text-align: center;">
+            <p class="font-script" style="margin-bottom: 20px;">CreativeLab Helsinki // 2025</p>
+            <p style="color: #666; font-size: 0.8rem;">Supported by Opetus- ja kulttuuriministeriö Finland</p>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-
 
 </body>
 </html>
