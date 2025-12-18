@@ -279,8 +279,41 @@
 
         .film-title { color: var(--spotlight-gold); margin-bottom: 10px; }
 
+                /* Contacts Section */
+        #contacts .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--action-red);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            color: #a3a3a3;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #a3a3a3;
+            text-decoration: none;
+            margin-bottom: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--action-red);
+            padding-left: 5px;
+        }
+
+        /* Footer Styles */
         footer {
-            padding: 60px 0;
+            padding: 40px 0;
             border-top: 1px solid #222;
             background: #050505;
         }
@@ -437,6 +470,37 @@
                 <p>An experimental narrative on memory. Created in 48 hours for Uneton48</p>
                 <a href="https://www.canva.com/design/DAGt1O0vfhA/NTzsAKDCUEkcXMR-mmXHiA/watch?utm_content=DAGt1O0vfhA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h697ba1b99b" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH ]</a>
             </div>
+        </div>
+    </section>
+
+       <section id="contacts" style="background: #111; padding: 80px 0;">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="font-playfair">CreativeLab Helsinki</h3>
+                    <p>Empowering young creatives through comprehensive storytelling and filmmaking education in the heart of Helsinki.</p>
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="https://www.instagram.com/creativelabhelsinki/" target="_blank">📷 Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61565014807067" target="_blank">📘 Facebook</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#courses">Courses</a>
+                    <a href="#team">Our Team</a>
+                    <a href="#films">Films</a>
+                    <a href="https://forms.office.com/r/tPir93Pp9C" target="_blank">Apply Now</a>
+                </div>
+                
+                <div id="contacts" class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 International Language Club<br>
+                    Saukonpaadenranta 4G, 00180 Helsinki</p>
+                    <p>📧 <a href="mailto:interlang.home@gmail.com" style="display: inline; color: var(--spotlight-gold);">interlang.home@gmail.com</a></p>
+                    <p>📞 <a href="tel:+358401314588" style="display: inline; color: var(--spotlight-gold);">+358 40 1314588</a></p>
+                </div>
+            </div>            
         </div>
     </section>
 
