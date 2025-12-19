@@ -401,10 +401,18 @@
         }
 
         /* Contacts Section */
-        #contacts .footer-content {
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid #222;
+            background: #050505;
+        }
+
+        .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
+            margin-bottom: 40px;
         }
 
         .footer-section h3 {
@@ -432,11 +440,10 @@
             padding-left: 5px;
         }
 
-        /* Footer Styles */
-        footer {
-            padding: 40px 0;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
             border-top: 1px solid #222;
-            background: #050505;
         }
 
         @media (max-width: 768px) {
@@ -594,23 +601,24 @@
         </div>
     </section>
 
-    <section id="contacts" style="background: #111; padding: 80px 0;">
+    <footer id="contacts">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="font-playfair">CreativeLab Helsinki</h3>
                     <p>Empowering young creatives through comprehensive storytelling and filmmaking education in the heart of Helsinki.</p>
                     <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                        <a href="https://www.instagram.com/creativelabhelsinki/" target="_blank">📷 Instagram</a>
-                        <a href="https://www.facebook.com/profile.php?id=61565014807067" target="_blank">📘 Facebook</a>
+                        <a href="https://www.instagram.com/creativelabhelsinki/" target="_blank" style="display: inline;">📷 Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61565014807067" target="_blank" style="display: inline;">📘 Facebook</a>
                     </div>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Quick Links</h3>
-                    <a href="#courses">Courses</a>
-                    <a href="#team">Our Team</a>
-                    <a href="https://creativelab-helsinki.one/films">Films</a>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#courses">Courses</a>
+                    <a href="index.html#team">Our Team</a>
+                    <a href="films.html">Films & Screenings</a>
                     <a href="https://forms.office.com/r/tPir93Pp9C" target="_blank">Apply Now</a>
                 </div>
                 
@@ -621,14 +629,12 @@
                     <p>📧 <a href="mailto:interlang.home@gmail.com" style="display: inline; color: var(--spotlight-gold);">interlang.home@gmail.com</a></p>
                     <p>📞 <a href="tel:+358401314588" style="display: inline; color: var(--spotlight-gold);">+358 40 1314588</a></p>
                 </div>
-            </div>            
-        </div>
-    </section>
+            </div>
 
-    <footer>
-        <div class="container" style="text-align: center;">
-            <p class="font-script" style="margin-bottom: 20px;">CreativeLab Helsinki // 2025</p>
-            <p style="color: #666; font-size: 0.8rem;">Supported by Opetus- ja kulttuuriministeriö Finland</p>
+            <div class="footer-bottom">
+                <p class="font-script" style="margin-bottom: 20px;">CreativeLab Helsinki // 2025</p>
+                <p style="color: #666; font-size: 0.8rem;">Supported by Opetus- ja kulttuuriministeriö Finland</p>
+            </div>
         </div>
     </footer>
 
