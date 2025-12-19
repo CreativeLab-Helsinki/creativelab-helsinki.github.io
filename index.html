@@ -99,6 +99,137 @@
             transition: 0.3s;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--script-white);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1002;
+            transition: right 0.4s ease;
+            border-left: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .mobile-menu-header .logo {
+            font-size: 1.2rem;
+        }
+
+        .close-menu {
+            background: none;
+            border: none;
+            color: var(--script-white);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: 0.3s;
+        }
+
+        .close-menu:hover {
+            color: var(--action-red);
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            padding: 2rem 0;
+        }
+
+        .mobile-nav-links li {
+            margin: 0;
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--script-white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            border-left: 3px solid transparent;
+        }
+
+        .mobile-nav-links a:hover,
+        .mobile-nav-links a:active {
+            background: rgba(255,255,255,0.05);
+            border-left-color: var(--action-red);
+            color: var(--action-red);
+        }
+
+        .mobile-cta {
+            margin: 1rem 1.5rem;
+            padding: 1rem 1.5rem;
+            background: var(--action-red);
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* Hero Section */
         .hero {
             padding: 180px 0 100px;
@@ -194,7 +325,7 @@
             color: white;
         }
 
-        /* Team Section - ADDED MISSING STYLES */
+        /* Team Section */
         #team {
             padding: 80px 0;
             background: #0a0a0a;
@@ -269,20 +400,10 @@
             line-height: 1.6;
         }
 
-        <!-- /* Film Gallery */
-        .film-card {
-            background: #000;
-            border-left: 5px solid var(--spotlight-gold);
-            padding: 20px;
-            margin-bottom: 20px;
-        } -->
-
-        <!-- .film-title { color: var(--spotlight-gold); margin-bottom: 10px; } -->
-
-                /* Contacts Section */
+        /* Contacts Section */
         #contacts .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmin(250px, 1fr));
             gap: 3rem;
         }
 
@@ -320,8 +441,11 @@
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .desktop-cta { display: none; }
+            .hamburger { display: flex; }
             .mission-box { padding: 30px; margin: 0 10px; }
             .team-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -336,9 +460,32 @@
                 <li><a href="https://creativelab-helsinki.one/films/">Screenings</a></li>
                 <li><a href="#contacts">Contact</a></li>
             </ul>
-            <a href="https://forms.office.com/r/tPir93Pp9C" class="cta-button">Apply Now</a>
+            <a href="https://forms.office.com/r/tPir93Pp9C" class="cta-button desktop-cta">Apply Now</a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo font-script">CreativeLab // HEL</a>
+            <button class="close-menu" id="closeMenu" aria-label="Close Menu">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#courses" class="mobile-link">Production</a></li>
+            <li><a href="#team" class="mobile-link">Crew</a></li>
+            <li><a href="https://creativelab-helsinki.one/films/" class="mobile-link">Screenings</a></li>
+            <li><a href="#contacts" class="mobile-link">Contact</a></li>
+            <li><a href="https://forms.office.com/r/tPir93Pp9C" class="mobile-cta">Apply Now</a></li>
+        </ul>
+    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <section class="hero">
         <div class="container">
@@ -372,13 +519,13 @@
                 <span class="course-icon">✍️</span>
                 <h3 class="font-script">01. Screenwriting</h3>
                 <p style="color: #a3a3a3; margin-top: 1rem;">From logline to final draft. Learn structure, dialogue, and character arcs. Ends with live readings at Viirus Theater.</p>
-                <a href="#films" class="btn-outline">Screenplay Readings</a>
+                <a href="https://creativelab-helsinki.one/films/" class="btn-outline">Screenplay Readings</a>
             </div>
             <div class="course-card">
                 <span class="course-icon">🎬</span>
                 <h3 class="font-script">02. Production</h3>
                 <p style="color: #a3a3a3; margin-top: 1rem;">Hands-on filmmaking. Storyboarding, lighting, and directing. We shoot with professional crew and gear.</p>
-                <a href="#films" class="btn-outline">Short Movies</a>
+                <a href="https://creativelab-helsinki.one/films/" class="btn-outline">Short Movies</a>
             </div>
             <div class="course-card">
                 <span class="course-icon">🍿</span>
@@ -447,32 +594,6 @@
         </div>
     </section>
 
-    <!-- <section id="films" style="background: #111; padding: 80px 0;">
-        <div class="container">
-            <h2 class="font-playfair" style="margin-bottom: 40px;">Recent Premiers</h2>
-            <div class="film-card">
-                <h3 class="font-script film-title">The Next Station</h3>
-                <p>Directed by Daniil Daniushevsky, Mikhail Vaulin, Matvey Durnenkov</p>
-                <a href="https://www.canva.com/design/DAGt09lxEhk/6Oq7kj3U_NWx3XSp_aXCCg/watch?utm_content=DAGt09lxEhk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h26c91e8ba2" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH ]</a>
-            </div>
-            <div class="film-card">
-                <h3 class="font-script film-title">Concert for Piano & Cello</h3>
-                <p>Directed by: Evgeny Rozhnov, Luka Ivanov, Vladislav Rayak</p>
-                <a href="https://www.canva.com/design/DAGt1Ko5od8/FYBrcmFZtnABi617-sTEuQ/watch?utm_content=DAGt1Ko5od8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=heb76d7517f" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH ]</a>
-            </div>
-            <div class="film-card">
-                <h3 class="font-script film-title">Between the Lines</h3>
-                <p>Directed by: Nataliya Rozhnova, Ekaterina Nedostupova, Anastasiia Chala</p>
-                <a href="https://www.canva.com/design/DAGt03oB1Ho/lp7gPSiIOCYkAQ6smly60Q/watch?utm_content=DAGt03oB1Ho&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8a823a7e85" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH ]</a>
-            </div>
-            <div class="film-card">
-                <h3 class="font-script film-title">Snap to memories</h3>
-                <p>An experimental narrative on memory. Created in 48 hours for Uneton48</p>
-                <a href="https://www.canva.com/design/DAGt1O0vfhA/NTzsAKDCUEkcXMR-mmXHiA/watch?utm_content=DAGt1O0vfhA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h697ba1b99b" style="color: var(--action-red); text-decoration: none; font-weight: bold;">[ WATCH ]</a>
-            </div>
-        </div>
-    </section> -->
-
     <section id="contacts" style="background: #111; padding: 80px 0;">
         <div class="container">
             <div class="footer-content">
@@ -493,7 +614,7 @@
                     <a href="https://forms.office.com/r/tPir93Pp9C" target="_blank">Apply Now</a>
                 </div>
                 
-                <div id="contacts" class="footer-section">
+                <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p>📍 International Language Club<br>
                     Saukonpaadenranta 4G, 00180 Helsinki</p>
@@ -510,6 +631,38 @@
             <p style="color: #666; font-size: 0.8rem;">Supported by Opetus- ja kulttuuriministeriö Finland</p>
         </div>
     </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            mobileMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenuFunc() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburger.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        menuOverlay.addEventListener('click', closeMenuFunc);
+
+        // Close menu when clicking on internal links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenuFunc);
+        });
+    </script>
 
 </body>
 </html>
