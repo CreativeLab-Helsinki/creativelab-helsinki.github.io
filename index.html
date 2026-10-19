@@ -10,9 +10,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{--canvas:#e7eaee;--card:#fff;--ink:#14171f;--muted:#5d6572;--line:#cbd1da;--yellow:#ffd400;--purple:#5b3df5;--display:'Unbounded','Golos Text',system-ui,sans-serif;--body:'Golos Text',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.6 var(--body);overflow-x:hidden}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid var(--purple);outline-offset:3px}.shell{max-width:1500px;margin:auto;padding:0 34px}nav{height:84px;position:sticky;top:0;z-index:20;background:rgba(231,234,238,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{height:100%;max-width:1500px;margin:auto;padding:0 34px;display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap;font-size:21px;font-weight:700;letter-spacing:-.04em}.brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--purple);color:#fff;font:600 17px var(--mono);box-shadow:0 5px 14px #5b3df52b}.nav-links{display:flex;align-items:center;gap:clamp(14px,2.3vw,34px);list-style:none;margin:0 auto 0 12px;padding:0}.nav-links a,.nav-action{font-size:14px;text-decoration:none;color:#4f5662;transition:color .2s}.nav-links a:hover,.nav-action:hover{color:var(--ink)}.nav-right{display:flex;align-items:center;gap:26px;white-space:nowrap}.lang{display:flex;padding:3px;border:1px solid var(--line);border-radius:99px;background:#f8f9fb}.lang a{font:500 11px var(--mono);padding:7px 11px;border-radius:99px;text-decoration:none;color:var(--muted)}.lang a.active{background:var(--purple);color:white}.nav-action{font-weight:600;color:var(--ink)}.nav-action.register{color:var(--purple)}.burger{display:none;border:0;background:none;padding:8px;font-size:25px;cursor:pointer}.hero{padding:34px 0 0}.hero-panel{min-height:600px;position:relative;overflow:hidden;background:var(--ink);color:#fff;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);align-items:center;padding:clamp(42px,7vw,100px) clamp(28px,7vw,110px);isolation:isolate}.hero-panel:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 75% 22%,#272d3c 0,transparent 40%),linear-gradient(135deg,transparent 45%,#1b202b 100%)}.hero-copy{position:relative;z-index:2;max-width:800px}.eyebrow,.kicker{font:500 12px/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#c0c7d3}.eyebrow{margin:0 0 30px}.eyebrow b{color:var(--yellow);font-weight:500}.hero h1{font:700 clamp(42px,7.1vw,100px)/.99 var(--display);letter-spacing:-.065em;margin:0 0 24px;max-width:900px}.hero h1 em{font-style:normal;color:var(--yellow)}.lede{max-width:530px;color:#c6ccd6;font-size:clamp(17px,1.7vw,21px);margin:0 0 32px}.cta-row{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:15px 22px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;font:500 12px var(--mono);transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.btn-yellow{background:var(--yellow);color:var(--ink);border:1px solid var(--yellow)}.btn-outline{border:1px solid #858d9c;color:#fff;background:transparent}.btn-outline:hover{border-color:#fff}.btn .arrow{font-size:18px;line-height:1}.art{height:100%;min-height:350px;position:relative;display:flex;align-items:center;justify-content:center}.orb{position:absolute;border-radius:50%;border:1px solid #ffffff24}.orb.one{width:330px;height:330px}.orb.two{width:245px;height:245px}.art-symbol{position:absolute;display:grid;place-items:center;filter:drop-shadow(0 18px 18px #0005);font-size:clamp(64px,8vw,110px);animation:float 5s ease-in-out infinite}.globe{top:6%;left:2%;transform:rotate(-12deg)}.book{top:5%;right:0;animation-delay:-1.2s}.speech{left:26%;top:43%;font-size:clamp(70px,9vw,120px);animation-delay:-2.2s}.pencil{right:4%;bottom:4%;font-size:clamp(58px,7vw,92px);transform:rotate(-20deg);animation-delay:-.7s}.spark{position:absolute;color:var(--yellow);font-size:30px}.spark.s1{top:22%;right:26%}.spark.s2{bottom:14%;left:7%;color:var(--purple);font-size:42px}.spark.s3{top:48%;right:4%;font-size:18px}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}main{padding-bottom:80px}.section{padding-top:78px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:24px}.section h2{font:700 clamp(27px,4vw,42px)/1.12 var(--display);letter-spacing:-.04em;margin:0 0 10px}.sub{max-width:650px;color:var(--muted);margin:0}.kicker{color:var(--purple);margin:0 0 12px}.vision-card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--yellow);padding:clamp(26px,4vw,48px);display:grid;grid-template-columns:.65fr 1.35fr;gap:30px}.scene-label{font:500 11px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.vision-text p{font-size:clamp(17px,2vw,21px);max-width:750px;margin:0 0 16px}.vision-text p:last-child{margin-bottom:0}.programs{border-top:2px solid var(--ink)}.program{display:grid;grid-template-columns:100px 1fr auto;gap:24px;align-items:start;padding:28px 0;border-bottom:1px solid var(--line)}.program-number{font:700 34px/1 var(--display);letter-spacing:-.05em}.program-type{font:11px var(--mono);color:var(--muted);display:block;margin-top:8px}.program h3{font:600 21px/1.3 var(--display);letter-spacing:-.03em;margin:0 0 8px}.program p{max-width:700px;margin:0;color:#333a46}.text-link{align-self:center;text-decoration:none;color:var(--purple);font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid #5b3df55c;padding-bottom:5px;white-space:nowrap}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.fact{background:#fff;padding:22px}.fact b{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}.fact span{font-size:15px;line-height:1.5}.crew{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.member{background:#fff;border:1px solid var(--line);padding:24px;transition:transform .2s,border-color .2s}.member:hover{transform:translateY(-3px);border-color:var(--ink)}.avatar{width:74px;height:74px;border-radius:50%;background:#edf0f4;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;margin-bottom:18px;font:600 20px var(--display);color:var(--muted)}.avatar img{width:100%;height:100%;object-fit:cover}.member h3{font:600 17px var(--display);letter-spacing:-.02em;margin:0 0 6px}.member .role{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin:0 0 12px}.member .desc{font-size:14px;color:var(--muted);margin:0}.apply-band{background:var(--ink);color:white;padding:clamp(28px,5vw,52px);display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:18px}.apply-band h2{font:700 clamp(25px,4vw,39px)/1.12 var(--display);letter-spacing:-.04em;margin:0 0 10px}.apply-band h2 em{font-style:normal;color:var(--yellow)}.apply-band p{color:#c6ccd6;margin:0;max-width:470px}.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.contact-card{background:#fff;border:1px solid var(--line);padding:24px}.contact-card h3{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 15px}.contact-card p{font-size:15px;margin:0 0 9px}.contact-card p:last-child{margin-bottom:0}.contact-card a{color:var(--purple);text-decoration:none;border-bottom:1px solid #5b3df54d}.contact-card a:hover{border-color:var(--purple)}.social a{display:block;width:fit-content;margin-bottom:10px}footer{border-top:2px solid var(--ink);margin-top:70px;padding-top:22px;color:var(--muted);font-size:13px}footer .foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer strong{color:var(--ink)}.mono-note{font:11px/1.7 var(--mono);margin-top:16px}.mobile-menu{display:none}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.6 var(--body);overflow-x:hidden}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid var(--purple);outline-offset:3px}.shell{max-width:1500px;margin:auto;padding:0 34px}nav{height:84px;position:sticky;top:0;z-index:20;background:rgba(231,234,238,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav-inner{height:100%;max-width:1500px;margin:auto;padding:0 34px;display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap;font-size:21px;font-weight:700;letter-spacing:-.04em}.brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--purple);color:#fff;font:600 17px var(--mono);box-shadow:0 5px 14px #5b3df52b}.nav-links{display:flex;align-items:center;gap:clamp(14px,2.3vw,34px);list-style:none;margin:0 auto 0 12px;padding:0}.nav-links a,.nav-action{font-size:14px;text-decoration:none;color:#4f5662;transition:color .2s}.nav-links a:hover,.nav-action:hover{color:var(--ink)}.nav-right{display:flex;align-items:center;gap:26px;white-space:nowrap}
+    
+    /* Language Switcher */
+    .lang{display:flex;padding:3px;border:1px solid var(--line);border-radius:99px;background:#f8f9fb}
+    .lang button{font:500 11px var(--mono);padding:7px 11px;border-radius:99px;text-decoration:none;color:var(--muted);background:transparent;border:none;cursor:pointer;transition:background .2s, color .2s}
+    .lang button.active{background:var(--purple);color:white}
+    body:not(.lang-ru) .ru { display: none !important; }
+    body.lang-ru .en { display: none !important; }
+
+    .nav-action{font-weight:600;color:var(--ink)}.nav-action.register{color:var(--purple)}.burger{display:none;border:0;background:none;padding:8px;font-size:25px;cursor:pointer}.hero{padding:34px 0 0}.hero-panel{min-height:600px;position:relative;overflow:hidden;background:var(--ink);color:#fff;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);align-items:center;padding:clamp(42px,7vw,100px) clamp(28px,7vw,110px);isolation:isolate}.hero-panel:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 75% 22%,#272d3c 0,transparent 40%),linear-gradient(135deg,transparent 45%,#1b202b 100%)}.hero-copy{position:relative;z-index:2;max-width:800px}.eyebrow,.kicker{font:500 12px/1.5 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#c0c7d3}.eyebrow{margin:0 0 30px}.eyebrow b{color:var(--yellow);font-weight:500}.hero h1{font:700 clamp(42px,7.1vw,100px)/.99 var(--display);letter-spacing:-.065em;margin:0 0 24px;max-width:900px}.hero h1 em{font-style:normal;color:var(--yellow)}.lede{max-width:530px;color:#c6ccd6;font-size:clamp(17px,1.7vw,21px);margin:0 0 32px}.cta-row{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:15px 22px;text-decoration:none;text-transform:uppercase;letter-spacing:.08em;font:500 12px var(--mono);transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-2px)}.btn-yellow{background:var(--yellow);color:var(--ink);border:1px solid var(--yellow)}.btn-outline{border:1px solid #858d9c;color:#fff;background:transparent}.btn-outline:hover{border-color:#fff}.btn .arrow{font-size:18px;line-height:1}.art{height:100%;min-height:350px;position:relative;display:flex;align-items:center;justify-content:center}.orb{position:absolute;border-radius:50%;border:1px solid #ffffff24}.orb.one{width:330px;height:330px}.orb.two{width:245px;height:245px}.art-symbol{position:absolute;display:grid;place-items:center;filter:drop-shadow(0 18px 18px #0005);font-size:clamp(64px,8vw,110px);animation:float 5s ease-in-out infinite}.globe{top:6%;left:2%;transform:rotate(-12deg)}.book{top:5%;right:0;animation-delay:-1.2s}.speech{left:26%;top:43%;font-size:clamp(70px,9vw,120px);animation-delay:-2.2s}.pencil{right:4%;bottom:4%;font-size:clamp(58px,7vw,92px);transform:rotate(-20deg);animation-delay:-.7s}
+    
+    /* New Theater Symbol */
+    .theater{top:20%;right:45%;font-size:clamp(38px,5vw,65px);transform:rotate(15deg);animation-delay:-1.8s;filter:drop-shadow(0 12px 12px #0004)}
+    
+    .spark{position:absolute;color:var(--yellow);font-size:30px}.spark.s1{top:22%;right:26%}.spark.s2{bottom:14%;left:7%;color:var(--purple);font-size:42px}.spark.s3{top:48%;right:4%;font-size:18px}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}main{padding-bottom:80px}.section{padding-top:78px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:24px}.section h2{font:700 clamp(27px,4vw,42px)/1.12 var(--display);letter-spacing:-.04em;margin:0 0 10px}.sub{max-width:650px;color:var(--muted);margin:0}.kicker{color:var(--purple);margin:0 0 12px}.vision-card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--yellow);padding:clamp(26px,4vw,48px);display:grid;grid-template-columns:.65fr 1.35fr;gap:30px}.scene-label{font:500 11px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.vision-text p{font-size:clamp(17px,2vw,21px);max-width:750px;margin:0 0 16px}.vision-text p:last-child{margin-bottom:0}.programs{border-top:2px solid var(--ink)}.program{display:grid;grid-template-columns:100px 1fr auto;gap:24px;align-items:start;padding:28px 0;border-bottom:1px solid var(--line)}.program-number{font:700 34px/1 var(--display);letter-spacing:-.05em}.program-type{font:11px var(--mono);color:var(--muted);display:block;margin-top:8px}.program h3{font:600 21px/1.3 var(--display);letter-spacing:-.03em;margin:0 0 8px}.program p{max-width:700px;margin:0;color:#333a46}.text-link{align-self:center;text-decoration:none;color:var(--purple);font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid #5b3df55c;padding-bottom:5px;white-space:nowrap}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.fact{background:#fff;padding:22px}.fact b{display:block;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}.fact span{font-size:15px;line-height:1.5}.crew{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.member{background:#fff;border:1px solid var(--line);padding:24px;transition:transform .2s,border-color .2s}.member:hover{transform:translateY(-3px);border-color:var(--ink)}.avatar{width:74px;height:74px;border-radius:50%;background:#edf0f4;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;margin-bottom:18px;font:600 20px var(--display);color:var(--muted)}.avatar img{width:100%;height:100%;object-fit:cover}.member h3{font:600 17px var(--display);letter-spacing:-.02em;margin:0 0 6px}.member .role{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--purple);margin:0 0 12px}.member .desc{font-size:14px;color:var(--muted);margin:0}.apply-band{background:var(--ink);color:white;padding:clamp(28px,5vw,52px);display:flex;align-items:center;justify-content:space-between;gap:28px;margin-bottom:18px}.apply-band h2{font:700 clamp(25px,4vw,39px)/1.12 var(--display);letter-spacing:-.04em;margin:0 0 10px}.apply-band h2 em{font-style:normal;color:var(--yellow)}.apply-band p{color:#c6ccd6;margin:0;max-width:470px}.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.contact-card{background:#fff;border:1px solid var(--line);padding:24px}.contact-card h3{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 15px}.contact-card p{font-size:15px;margin:0 0 9px}.contact-card p:last-child{margin-bottom:0}.contact-card a{color:var(--purple);text-decoration:none;border-bottom:1px solid #5b3df54d}.contact-card a:hover{border-color:var(--purple)}.social a{display:block;width:fit-content;margin-bottom:10px}footer{border-top:2px solid var(--ink);margin-top:70px;padding-top:22px;color:var(--muted);font-size:13px}footer .foot-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer strong{color:var(--ink)}.mono-note{font:11px/1.7 var(--mono);margin-top:16px}.mobile-menu{display:none}
     @media(max-width:1050px){.nav-inner{gap:18px}.nav-links{gap:16px}.nav-right{gap:15px}.hero-panel{grid-template-columns:1fr .7fr;padding-left:48px;padding-right:48px}.hero h1{font-size:clamp(42px,6.6vw,76px)}.facts{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:760px){.shell{padding:0 16px}.nav-inner{padding:0 16px;height:72px}.brand{font-size:19px}.brand-mark{width:40px;height:40px}.nav-links,.nav-right{display:none}.burger{display:block;margin-left:auto}.mobile-menu{position:absolute;top:72px;left:0;right:0;background:var(--canvas);border-bottom:1px solid var(--line);padding:12px 20px 20px;display:none}.mobile-menu.open{display:block}.mobile-menu a{display:block;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.mobile-menu .mobile-register{color:var(--purple);font-weight:700}.hero{padding-top:16px}.hero-panel{min-height:unset;display:block;padding:42px 25px 32px}.hero h1{font-size:clamp(42px,10vw,68px);line-height:1.02}.eyebrow{font-size:10px;margin-bottom:22px}.lede{font-size:17px}.art{min-height:220px;margin-top:12px}.orb.one{width:220px;height:220px}.orb.two{width:165px;height:165px}.art-symbol{font-size:68px}.globe{top:0;left:9%}.book{top:0;right:8%}.speech{left:34%;top:35%;font-size:75px}.pencil{right:10%;bottom:0;font-size:60px}.section{padding-top:56px}.section-heading{display:block}.section-heading .text-link{display:inline-block;margin-top:10px}.vision-card{grid-template-columns:1fr;gap:14px;padding:25px}.program{grid-template-columns:64px 1fr;gap:14px;padding:22px 0}.program-number{font-size:27px}.program h3{font-size:18px}.program .text-link{grid-column:2;justify-self:start;margin-top:3px}.crew{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.member{padding:18px}.facts{grid-template-columns:1fr 1fr}.fact{padding:17px}.apply-band{align-items:flex-start;flex-direction:column}.contact{grid-template-columns:1fr}.foot-row{display:block!important}}
+    @media(max-width:760px){.shell{padding:0 16px}.nav-inner{padding:0 16px;height:72px}.brand{font-size:19px}.brand-mark{width:40px;height:40px}.nav-links,.nav-right{display:none}.burger{display:block;margin-left:auto}.mobile-menu{position:absolute;top:72px;left:0;right:0;background:var(--canvas);border-bottom:1px solid var(--line);padding:12px 20px 20px;display:none}.mobile-menu.open{display:block}.mobile-menu a{display:block;text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.mobile-menu .mobile-register{color:var(--purple);font-weight:700}.hero{padding-top:16px}.hero-panel{min-height:unset;display:block;padding:42px 25px 32px}.hero h1{font-size:clamp(42px,10vw,68px);line-height:1.02}.eyebrow{font-size:10px;margin-bottom:22px}.lede{font-size:17px}.art{min-height:220px;margin-top:12px}.orb.one{width:220px;height:220px}.orb.two{width:165px;height:165px}.art-symbol{font-size:68px}.globe{top:0;left:9%}.book{top:0;right:8%}.speech{left:34%;top:35%;font-size:75px}.pencil{right:10%;bottom:0;font-size:60px}.theater{top:12%;right:25%;font-size:42px}.section{padding-top:56px}.section-heading{display:block}.section-heading .text-link{display:inline-block;margin-top:10px}.vision-card{grid-template-columns:1fr;gap:14px;padding:25px}.program{grid-template-columns:64px 1fr;gap:14px;padding:22px 0}.program-number{font-size:27px}.program h3{font-size:18px}.program .text-link{grid-column:2;justify-self:start;margin-top:3px}.crew{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.member{padding:18px}.facts{grid-template-columns:1fr 1fr}.fact{padding:17px}.apply-band{align-items:flex-start;flex-direction:column}.contact{grid-template-columns:1fr}.foot-row{display:block!important}}
     @media(max-width:420px){.cta-row{display:grid}.btn{width:100%;padding:14px 12px}.crew{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.hero-panel{padding:34px 20px 24px}.hero h1{font-size:40px}.art{min-height:190px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   </style>
@@ -22,43 +36,248 @@
     <div class="nav-inner">
       <a href="#top" class="brand" aria-label="CreativeLab Helsinki home"><span class="brand-mark">CL</span><span>CreativeLab <span style="color:var(--purple)">//</span> HEL</span></a>
       <ul class="nav-links">
-        <li><a href="#vision">Vision</a></li><li><a href="#curriculum">Curriculum</a></li><li><a href="https://creativelab-helsinki.one/films/">Films</a></li><li><a href="#crew">Crew</a></li><li><a href="#contact">Contact</a></li>
+        <li><a href="#vision"><span class="en">Vision</span><span class="ru">Видение</span></a></li>
+        <li><a href="#curriculum"><span class="en">Curriculum</span><span class="ru">Программа</span></a></li>
+        <li><a href="https://creativelab-helsinki.one/films/"><span class="en">Films</span><span class="ru">Фильмы</span></a></li>
+        <li><a href="#crew"><span class="en">Crew</span><span class="ru">Команда</span></a></li>
+        <li><a href="#contact"><span class="en">Contact</span><span class="ru">Контакты</span></a></li>
       </ul>
-      <div class="nav-right"><div class="lang" aria-label="Language"><a class="active" href="#" aria-current="page">EN</a><a href="#">RU</a></div><a class="nav-action" href="https://interlang.fi">Log in</a><a class="nav-action register" href="https://interlang.fi">Apply now ↗</a></div>
+      <div class="nav-right">
+        <div class="lang" aria-label="Language">
+          <button class="active" data-lang="en">EN</button>
+          <button data-lang="ru">RU</button>
+        </div>
+        <a class="nav-action" href="https://interlang.fi"><span class="en">Log in</span><span class="ru">Войти</span></a>
+        <a class="nav-action register" href="https://interlang.fi"><span class="en">Apply now ↗</span><span class="ru">Подать заявку ↗</span></a>
+      </div>
       <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">☰</button>
     </div>
-    <div class="mobile-menu" id="mobileMenu"><a href="#vision">Vision</a><a href="#curriculum">Curriculum</a><a href="https://creativelab-helsinki.one/films/">Films &amp; screenings</a><a href="#crew">Crew</a><a href="#contact">Contact</a><a class="mobile-register" href="https://interlang.fi">Apply now ↗</a></div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#vision"><span class="en">Vision</span><span class="ru">Видение</span></a>
+      <a href="#curriculum"><span class="en">Curriculum</span><span class="ru">Программа</span></a>
+      <a href="https://creativelab-helsinki.one/films/"><span class="en">Films &amp; screenings</span><span class="ru">Фильмы и показы</span></a>
+      <a href="#crew"><span class="en">Crew</span><span class="ru">Команда</span></a>
+      <a href="#contact"><span class="en">Contact</span><span class="ru">Контакты</span></a>
+      <a class="mobile-register" href="https://interlang.fi"><span class="en">Apply now ↗</span><span class="ru">Подать заявку ↗</span></a>
+    </div>
   </nav>
+  
   <header class="hero" id="top"><div class="shell"><div class="hero-panel">
-    <div class="hero-copy"><p class="eyebrow">CreativeLab Helsinki <b>/ Now casting: visionaries 2026</b></p><h1>Write.<br>Shoot.<br><em>Edit.</em></h1><p class="lede">Master the art of visual storytelling in a year-long cinematic laboratory. Transform your ideas into professional-grade short films.</p><div class="cta-row"><a class="btn btn-yellow" href="https://interlang.fi">Apply now <span class="arrow">→</span></a><a class="btn btn-outline" href="https://creativelab-helsinki.one/films/">Watch student films <span class="arrow">→</span></a></div></div>
-    <div class="art" aria-hidden="true"><span class="orb one"></span><span class="orb two"></span><span class="art-symbol globe">🌍</span><span class="art-symbol book">📖</span><span class="art-symbol speech">🎬</span><span class="art-symbol pencil">✏️</span><span class="spark s1">✳</span><span class="spark s2">✦</span><span class="spark s3">●</span></div>
+    <div class="hero-copy">
+      <p class="eyebrow">CreativeLab Helsinki <b>/ <span class="en">Now casting: visionaries 2026</span><span class="ru">Открыт набор: визионеры 2026</span></b></p>
+      <h1><span class="en">Write.<br>Shoot.<br><em>Edit.</em></span><span class="ru">Идея.<br>Сценарий<br><em>Премьера.</em></span></h1>
+      <p class="lede"><span class="en">Master the art of visual storytelling in a year-long cinematic laboratory. Transform your ideas into professional-grade short films.</span><span class="ru">Познакомьтесь с искусством визуального сторителлинга в creativelab. Превратите свои идеи в профессиональные cценарии.</span></p>
+      <div class="cta-row">
+        <a class="btn btn-yellow" href="https://interlang.fi"><span class="en">Apply now</span><span class="ru">Подать заявку</span> <span class="arrow">→</span></a>
+        <a class="btn btn-outline" href="https://creativelab-helsinki.one/films/"><span class="en">Watch student films</span><span class="ru">Смотреть работы студентов</span> <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <span class="orb one"></span><span class="orb two"></span>
+      <span class="art-symbol globe">🌍</span>
+      <span class="art-symbol book">📖</span>
+      <span class="art-symbol speech">🎬</span>
+      <!-- <span class="art-symbol theater">🎭</span> -->
+      <span class="art-symbol pencil">✏️</span>
+      <span class="spark s1">✳</span><span class="spark s2">✦</span><span class="spark s3">●</span>
+    </div>
   </div></div></header>
+  
   <main class="shell">
-    <section class="section" id="vision"><div class="section-heading"><div><p class="kicker">01 / The idea</p><h2>The vision</h2><p class="sub">What this place is for, in our own words.</p></div></div><div class="vision-card"><div class="scene-label">Scene 1 — INT. Helsinki studio</div><div class="vision-text"><p>We are building a community of filmmakers. Our mission is simple: to provide the tools, the stage, and the expertise for you to master <strong>screenwriting</strong> and <strong>film production</strong>.</p><p>In this space, we collaborate. We develop empathy. We create magic.</p></div></div></section>
-    <section class="section" id="curriculum"><div class="section-heading"><div><p class="kicker">02 / Learn by making</p><h2>The curriculum</h2><p class="sub">Three programmes that run alongside each other. You can follow one or move between them as your project grows.</p></div></div><div class="programs">
-      <article class="program"><div><span class="program-number">01</span><span class="program-type">Writing</span></div><div><h3>Screenwriting</h3><p>From logline to final draft. Learn structure, dialogue, and character arcs. Ends with live readings at Viirus Theater.</p></div><a class="text-link" href="https://creativelab-helsinki.one/films/">Screenplay readings ↗</a></article>
-      <article class="program"><div><span class="program-number">02</span><span class="program-type">On set</span></div><div><h3>Production</h3><p>Hands-on filmmaking. Storyboarding, lighting, and directing. We shoot with professional crew and gear.</p></div><a class="text-link" href="https://creativelab-helsinki.one/films/">Short movies ↗</a></article>
-      <article class="program"><div><span class="program-number">03</span><span class="program-type">Lectures</span></div><div><h3>Cinema Talks</h3><p>Analyze the masters. Deep dives into film history and theory to sharpen your visual vocabulary.</p></div><a class="text-link" href="#contact">Ask about dates ↗</a></article>
-    </div></section>
-    <section class="section" id="essentials"><div class="section-heading"><div><p class="kicker">03 / Practical details</p><h2>The essentials</h2><p class="sub">Everything you need to know before you write to us.</p></div></div><div class="facts"><div class="fact"><b>Where</b><span>International Language Club, Saukonpaadenranta 4G, Helsinki</span></div><div class="fact"><b>Format</b><span>Year-long laboratory across three programmes</span></div><div class="fact"><b>Stage</b><span>Live screenplay readings at Viirus Theater</span></div><div class="fact"><b>Supported by</b><span>Opetus- ja kulttuuriministeriö, Finland</span></div></div></section>
-    <section class="section" id="crew"><div class="section-heading"><div><p class="kicker">04 / The people</p><h2>Our creative team</h2><p class="sub">Experienced professionals guiding your creative journey.</p></div></div><div class="crew">
-      <article class="member"><div class="avatar"><img src="attached_assets/mikhail.jpg" alt="" onerror="this.style.display='none';this.parentElement.textContent='MD'"></div><h3>Mikhail Durnenkov</h3><p class="role">Dramaturg · Course lecturer</p><p class="desc">Spearheading all projects and driving the CreativeLab platform forward.</p></article>
-      <article class="member"><div class="avatar"><img src="attached_assets/sasha.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='AD'"></div><h3>Alexandra Dunaeva</h3><p class="role">Theater teacher</p><p class="desc">Guiding students in performance and theatrical presentation.</p></article>
-      <article class="member"><div class="avatar"><img src="attached_assets/ksenia.jpg" alt="" onerror="this.style.display='none';this.parentElement.textContent='KP'"></div><h3>Ksenia Peretrukhina</h3><p class="role">Contemporary artist</p><p class="desc">Cinema Talks — film discussions and cinema history lectures.</p></article>
-      <article class="member"><div class="avatar"><img src="attached_assets/darina.jpg" alt="" onerror="this.style.display='none';this.parentElement.textContent='DR'"></div><h3>Darina Rodionova</h3><p class="role">Video &amp; editing</p><p class="desc">Professional filming techniques and post-production.</p></article>
-      <article class="member"><div class="avatar"><img src="attached_assets/ira.jpeg" alt="" onerror="this.style.display='none';this.parentElement.textContent='IG'"></div><h3>Irina Gavryukova</h3><p class="role">Executive producer</p><p class="desc">All aspects of production, operations, and team management.</p></article>
-      <article class="member"><div class="avatar"><img src="attached_assets/dima.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='DG'"></div><h3>Dmitry Gavrykov</h3><p class="role">Advisory producer</p><p class="desc">Advises on creative and operational aspects of the project.</p></article>
-      <article class="member"><div class="avatar"><img src="attached_assets/maria.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='MR'"></div><h3>Maria Rohnonen</h3><p class="role">Advisory producer</p><p class="desc">Strategy, fundraising, website.</p></article>
-    </div></section>
-    <section class="section" id="contact"><div class="section-heading"><div><p class="kicker">05 / Join the story</p><h2>Get in touch</h2><p class="sub">Come to a screening, ask a question, or send us your application.</p></div></div><div class="apply-band"><div><h2>Casting is open for <em>2026</em></h2><p>Bring an idea, a half-finished script, or nothing but curiosity.</p></div><a class="btn btn-yellow" href="https://interlang.fi">Apply now <span class="arrow">→</span></a></div><div class="contact"><div class="contact-card"><h3>Find us</h3><p>International Language Club</p><p>Saukonpaadenranta 4G<br>00180 Helsinki</p></div><div class="contact-card"><h3>Talk to us</h3><p><a href="mailto:interlang.home@gmail.com">interlang.home@gmail.com</a></p><p><a href="tel:+358401314588">+358 40 1314588</a></p></div><div class="contact-card social"><h3>Follow</h3><a href="https://www.instagram.com/creativelabhelsinki/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.facebook.com/profile.php?id=61565014807067" target="_blank" rel="noopener">Facebook ↗</a><a href="https://creativelab-helsinki.one/films/">Films &amp; screenings ↗</a></div></div></section>
-    <footer><div class="foot-row"><p><strong>CreativeLab Helsinki</strong> — empowering young creatives through storytelling and filmmaking education in the heart of Helsinki.</p><p>CreativeLab Helsinki // 2026</p></div><p class="mono-note">Supported by Opetus- ja kulttuuriministeriö, Finland.</p></footer>
+    <section class="section" id="vision">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">01 / <span class="en">The idea</span><span class="ru">Идея</span></p>
+          <h2><span class="en">The vision</span><span class="ru">Видение</span></h2>
+          <p class="sub"><span class="en">What this place is for, in our own words.</span><span class="ru">Для чего это место, нашими собственными словами.</span></p>
+        </div>
+      </div>
+      <div class="vision-card">
+        <div class="scene-label"><span class="en">Scene 1 — INT. Helsinki studio</span><span class="ru">Сцена 1 — ИНТ. Студия в Хельсинки</span></div>
+        <div class="vision-text">
+          <p><span class="en">We are building a community of filmmakers. Our mission is simple: to provide the tools, the stage, and the expertise for you to master <strong>screenwriting</strong> and <strong>film production</strong>.</span><span class="ru">Мы создаем сообщество единомышленников. Наша миссия проста: предоставить инструменты, площадку и экспертизу для того, чтобы вы овладели <strong>сценарным мастерством</strong> и <strong>кино- театральным производством</strong>.</span></p>
+          <p><span class="en">In this space, we collaborate. We develop empathy. We create magic.</span><span class="ru">В этом пространстве мы сотрудничаем. Мы развиваем эмпатию. Мы создаем магию.</span></p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section" id="curriculum">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">02 / <span class="en">Learn by making</span><span class="ru">Обучение на практике</span></p>
+          <h2><span class="en">The curriculum</span><span class="ru">Программа</span></h2>
+          <p class="sub"><span class="en">Three programmes that run alongside each other. You can follow one or move between them as your project grows.</span><span class="ru">Три параллельные программы. Вы можете выбрать одну или переключаться между ними по мере развития вашего проекта.</span></p>
+        </div>
+      </div>
+      <div class="programs">
+        <article class="program">
+          <div><span class="program-number">01</span><span class="program-type"><span class="en">Writing</span><span class="ru">Письмо</span></span></div>
+          <div>
+            <h3><span class="en">Screenwriting</span><span class="ru">Сценарное мастерство</span></h3>
+            <p><span class="en">From logline to final draft. Learn structure, dialogue, and character arcs. Ends with live readings at Viirus Theater.</span><span class="ru">От логлайна до финального драфта. Изучите структуру, диалоги и арки персонажей. Завершается читками в театре Viirus.</span></p>
+          </div>
+          <a class="text-link" href="https://creativelab-helsinki.one/films/"><span class="en">Screenplay readings</span><span class="ru">Читки сценариев</span> ↗</a>
+        </article>
+        <article class="program">
+          <div><span class="program-number">02</span><span class="program-type"><span class="en">On set</span><span class="ru">На площадке</span></span></div>
+          <div>
+            <h3><span class="en">Production</span><span class="ru">Производство</span></h3>
+            <p><span class="en">Hands-on filmmaking. Storyboarding, lighting, and directing. We shoot with professional crew and gear.</span><span class="ru">Практическое кинопроизводство. Раскадровка, свет и режиссура. Мы снимаем с профессиональной командой и оборудованием.</span></p>
+          </div>
+          <a class="text-link" href="https://creativelab-helsinki.one/films/"><span class="en">Short movies</span><span class="ru">Короткометражные фильмы</span> ↗</a>
+        </article>
+        <article class="program">
+          <div><span class="program-number">03</span><span class="program-type"><span class="en">Lectures</span><span class="ru">Лекции</span></span></div>
+          <div>
+            <h3><span class="en">Cinema Talks</span><span class="ru">Беседы о кино</span></h3>
+            <p><span class="en">Analyze the masters. Deep dives into film history and theory to sharpen your visual vocabulary.</span><span class="ru">Анализируйте мастеров. Глубокое погружение в историю и теорию кино для расширения визуального словаря.</span></p>
+          </div>
+          <a class="text-link" href="#contact"><span class="en">Ask about dates</span><span class="ru">Узнать даты</span> ↗</a>
+        </article>
+      </div>
+    </section>
+    
+    <section class="section" id="essentials">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">03 / <span class="en">Practical details</span><span class="ru">Практические детали</span></p>
+          <h2><span class="en">The essentials</span><span class="ru">Основное</span></h2>
+          <p class="sub"><span class="en">Everything you need to know before you write to us.</span><span class="ru">Все, что нужно знать, прежде чем написать нам.</span></p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><b><span class="en">Where</span><span class="ru">Где</span></b><span>International Language Club, Saukonpaadenranta 4G, Helsinki</span></div>
+        <div class="fact"><b><span class="en">Format</span><span class="ru">Формат</span></b><span><span class="en">Year-long laboratory across three programmes</span><span class="ru">Лаборатория по трем программам</span></span></div>
+        <div class="fact"><b><span class="en">Stage</span><span class="ru">Сцена</span></b><span><span class="en">Live screenplay readings at Viirus Theater</span><span class="ru">Живые читки сценариев в театре Viirus</span></span></div>
+        <div class="fact"><b><span class="en">Supported by</span><span class="ru">При поддержке</span></b><span>Opetus- ja kulttuuriministeriö, Finland</span></div>
+      </div>
+    </section>
+    
+    <section class="section" id="crew">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">04 / <span class="en">The people</span><span class="ru">Люди</span></p>
+          <h2><span class="en">Our creative team</span><span class="ru">Наша творческая команда</span></h2>
+          <p class="sub"><span class="en">Experienced professionals guiding your creative journey.</span><span class="ru">Опытные профессионалы, направляющие ваш творческий путь.</span></p>
+        </div>
+      </div>
+      <div class="crew">
+        <article class="member">
+          <div class="avatar"><img src="attached_assets/mikhail.jpg" alt="" onerror="this.style.display='none';this.parentElement.textContent='MD'"></div>
+          <h3>Mikhail Durnenkov</h3>
+          <p class="role"><span class="en">Dramaturg · Course lecturer</span><span class="ru">Драматург · Лектор курса</span></p>
+          <p class="desc"><span class="en">Spearheading all projects and driving the CreativeLab platform forward.</span><span class="ru">Возглавляет все проекты и продвигает платформу CreativeLab.</span></p>
+        </article>
+        <article class="member">
+          <div class="avatar"><img src="attached_assets/sasha.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='AD'"></div>
+          <h3>Alexandra Dunaeva</h3>
+          <p class="role"><span class="en">Theater teacher</span><span class="ru">Театральный педагог</span></p>
+          <p class="desc"><span class="en">Guiding students in performance and theatrical presentation.</span><span class="ru">Направляет студентов в актерской игре и сценической презентации.</span></p>
+        </article>
+        <article class="member">
+          <div class="avatar"><img src="attached_assets/ksenia.jpg" alt="" onerror="this.style.display='none';this.parentElement.textContent='KP'"></div>
+          <h3>Ksenia Peretrukhina</h3>
+          <p class="role"><span class="en">Contemporary artist</span><span class="ru">Современный художник</span></p>
+          <p class="desc"><span class="en">Cinema Talks — film discussions and cinema history lectures.</span><span class="ru">Cinema Talks — обсуждения фильмов и лекции по истории кино.</span></p>
+        </article>
+        <article class="member">
+          <div class="avatar"><img src="attached_assets/darina.jpg" alt="" onerror="this.style.display='none';this.parentElement.textContent='DR'"></div>
+          <h3>Darina Rodionova</h3>
+          <p class="role"><span class="en">Video &amp; editing</span><span class="ru">Видео и монтаж</span></p>
+          <p class="desc"><span class="en">Professional filming techniques and post-production.</span><span class="ru">Профессиональные методы съемки и постпродакшн.</span></p>
+        </article>
+        <article class="member">
+          <div class="avatar"><img src="attached_assets/ira.jpeg" alt="" onerror="this.style.display='none';this.parentElement.textContent='IG'"></div>
+          <h3>Irina Gavryukova</h3>
+          <p class="role"><span class="en">Executive producer</span><span class="ru">Исполнительный продюсер</span></p>
+          <p class="desc"><span class="en">All aspects of production, operations, and team management.</span><span class="ru">Все аспекты производства, операций и управления командой.</span></p>
+        </article>
+        <article class="member">
+          <div class="avatar"><img src="attached_assets/dima.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='DG'"></div>
+          <h3>Dmitry Gavrykov</h3>
+          <p class="role"><span class="en">Advisory producer</span><span class="ru">Продюсер-консультант</span></p>
+          <p class="desc"><span class="en">Advises on creative and operational aspects of the project.</span><span class="ru">Консультирует по творческим и операционным аспектам проекта.</span></p>
+        </article>
+        <article class="member">
+          <div class="avatar"><img src="attached_assets/maria.png" alt="" onerror="this.style.display='none';this.parentElement.textContent='MR'"></div>
+          <h3>Maria Rohnonen</h3>
+          <p class="role"><span class="en">Advisory producer</span><span class="ru">Продюсер-консультант</span></p>
+          <p class="desc"><span class="en">Strategy, fundraising, website.</span><span class="ru">Стратегия, фандрайзинг, веб-сайт.</span></p>
+        </article>
+      </div>
+    </section>
+    
+    <section class="section" id="contact">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">05 / <span class="en">Join the story</span><span class="ru">Присоединяйтесь к истории</span></p>
+          <h2><span class="en">Get in touch</span><span class="ru">Связаться с нами</span></h2>
+          <p class="sub"><span class="en">Come to a screening, ask a question, or send us your application.</span><span class="ru">Приходите на показ, задавайте вопросы или отправляйте заявку.</span></p>
+        </div>
+      </div>
+      <div class="apply-band">
+        <div>
+          <h2><span class="en">Casting is open for <em>2026</em></span><span class="ru">Набор открыт на <em>2026</em> год</span></h2>
+          <p><span class="en">Bring an idea, a half-finished script, or nothing but curiosity.</span><span class="ru">Приносите идею, наполовину готовый сценарий или просто любопытство.</span></p>
+        </div>
+        <a class="btn btn-yellow" href="https://interlang.fi"><span class="en">Apply now</span><span class="ru">Подать заявку</span> <span class="arrow">→</span></a>
+      </div>
+      <div class="contact">
+        <div class="contact-card">
+          <h3><span class="en">Find us</span><span class="ru">Где нас найти</span></h3>
+          <p>International Language Club</p>
+          <p>Saukonpaadenranta 4G<br>00180 Helsinki</p>
+        </div>
+        <div class="contact-card">
+          <h3><span class="en">Talk to us</span><span class="ru">Написать нам</span></h3>
+          <p><a href="mailto:interlang.home@gmail.com">interlang.home@gmail.com</a></p>
+          <p><a href="tel:+358401314588">+358 40 1314588</a></p>
+        </div>
+        <div class="contact-card social">
+          <h3><span class="en">Follow</span><span class="ru">Подписаться</span></h3>
+          <a href="https://www.instagram.com/creativelabhelsinki/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="https://www.facebook.com/profile.php?id=61565014807067" target="_blank" rel="noopener">Facebook ↗</a>
+          <a href="https://creativelab-helsinki.one/films/"><span class="en">Films &amp; screenings</span><span class="ru">Фильмы и показы</span> ↗</a>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="foot-row">
+        <p><strong>CreativeLab Helsinki</strong> — <span class="en">empowering young creatives through storytelling and filmmaking education in the heart of Helsinki.</span><span class="ru">вдохновляем молодых талантов через обучение сторителлингу и кинопроизводству в самом сердце Хельсинки.</span></p>
+        <p>CreativeLab Helsinki // 2026</p>
+      </div>
+      <p class="mono-note"><span class="en">Supported by Opetus- ja kulttuuriministeriö, Finland.</span><span class="ru">При поддержке Opetus- ja kulttuuriministeriö, Финляндия.</span></p>
+    </footer>
   </main>
+  
   <script>
+    // Mobile Menu Toggle
     const burger=document.getElementById('burger');
     const menu=document.getElementById('mobileMenu');
     burger.addEventListener('click',()=>{const open=menu.classList.toggle('open');burger.setAttribute('aria-expanded',String(open));burger.textContent=open?'✕':'☰';});
     menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.textContent='☰';}));
     document.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.textContent='☰';}});
+    
+    // Language Switcher Toggle
+    const langBtns = document.querySelectorAll('.lang button');
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = btn.getAttribute('data-lang');
+        
+        // Toggle the body class
+        if (lang === 'ru') {
+          document.body.classList.add('lang-ru');
+        } else {
+          document.body.classList.remove('lang-ru');
+        }
+        
+        // Update active state on buttons
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
